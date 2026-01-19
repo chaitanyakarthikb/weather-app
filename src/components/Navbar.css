@@ -1,0 +1,12 @@
+.navbar{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+    align-items: center;
+    padding: 1rem 1rem 1rem;
+
+}
+
+.navbar h1{
+    color: white;
+}
