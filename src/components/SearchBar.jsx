@@ -13,7 +13,6 @@ const SearchBar = () => {
         </label>
       </div>
     </div>
-    
   );
 };
 
