@@ -1,0 +1,27 @@
+.location--suggestion{
+    background-color: #d9d9d9;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: solid 1px #b3b3b3;
+}
+
+.location--suggestion--labels{
+    display: flex;
+    justify-content: space-between;
+}
+
+.location--suggestion--labels h3{
+    width: 30%;
+    /* background-color: lightpink; */
+
+}
+
+.location--suggestion--values{
+    display: flex;
+    justify-content: space-between;
+}
+
+.location--suggestion--values p{
+    width: 30%;
+    /* background-color: lightgray; */
+}

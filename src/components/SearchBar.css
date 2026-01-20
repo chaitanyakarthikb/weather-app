@@ -1,11 +1,10 @@
 
 .searchBar{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 70% 30%;
 }
 .searchBar input{
-    width: 80%;
+    width: 100%;
     outline: none;
     font-size: 18px;
     background-color: #303136;
