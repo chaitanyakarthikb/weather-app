@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./SearchBar.css";
 import { useDarkModeContext } from "../store/DarkModeContext";
 import LocationSuggestion from "./LocationSuggestion";
+import { useWeatherContext } from "../store/WeatherContext";
 const SearchBar = () => {
   const { darkMode, setDarkMode } = useDarkModeContext();
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,11 +10,25 @@ const SearchBar = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [selectedLocation,setSelectedLocation] = useState(null);
-
-  useEffect(()=>{
-    console.log("============selectedLocation",selectedLocation)
-
-  },[selectedLocation])
+  const weatherApiURL = process.env.REACT_APP_WEATHER_API;
+  const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
+  const {state,dispatch} = useWeatherContext();
+  console.log("===========state",state);
+  useEffect(() => {
+    const fetchWeather = async () => {
+      if (selectedLocation?.latitude && selectedLocation?.longitude) {
+        let weatherApiURLfinal = `${weatherApiURL}lat=${selectedLocation?.latitude}&lon=${selectedLocation?.longitude}&appid=${weatherApiKey}`;
+        try {
+          let apiResponse = await fetch(weatherApiURLfinal);
+          let data = await apiResponse.json();
+          dispatch({type:"SET_WEATHER",payload:data})
+        } catch (error) {
+          console.error("=======error", error);
+        }
+      }
+    };
+    fetchWeather();
+  }, [selectedLocation]);
 
   useEffect(() => {
     const timeout = setTimeout(async () => {
@@ -36,7 +51,7 @@ const SearchBar = () => {
         }
       }
     }, 300);
-    return () => clearInterval(timeout);
+    return () => clearTimeout(timeout);
   }, [searchQuery]);
   return (
     <div className="searchBar">

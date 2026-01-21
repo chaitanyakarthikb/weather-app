@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DarkModeContextProvider } from './store/DarkModeContext';
+import { WeatherContextProvider } from './store/WeatherContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
+      <WeatherContextProvider>
      <App />
+     </WeatherContextProvider>
     </DarkModeContextProvider>
   </React.StrictMode>
 );
