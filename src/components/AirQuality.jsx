@@ -50,40 +50,40 @@ const AirQuality = () => {
             <div className="components">
               <div>
                 <p>CO (μg/m3)</p>
-                <h1>269.22</h1>
+                <h1>{state?.airQuality?.components?.co}</h1>
               </div>
 
               <div>
                 <p>NO (μg/m3)</p>
-                <h1>0.49</h1>
+                <h1>{state?.airQuality?.components?.no}</h1>
               </div>
 
               <div>
                 <p>
                   NO<sub>2</sub> (μg/m3)
                 </p>
-                <h1>2.54</h1>
+                <h1>{state?.airQuality?.components?.no2}</h1>
               </div>
 
               <div>
                 <p>
                   O<sub>3</sub> (μg/m3)
                 </p>
-                <h1>105.31</h1>
+                <h1>{state?.airQuality?.components?.o3}</h1>
               </div>
 
               <div>
                 <p>
                   SO<sub>2</sub> (μg/m3)
                 </p>
-                <h1>5.21</h1>
+                <h1>{state?.airQuality?.components?.so2}</h1>
               </div>
 
               <div>
                 <p>
                   NH<sub>3</sub> (μg/m3)
                 </p>
-                <h1>5.21</h1>
+                <h1>{state?.airQuality?.components?.nh3}</h1>
               </div>
             </div>
           </div>
