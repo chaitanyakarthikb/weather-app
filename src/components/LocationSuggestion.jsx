@@ -1,6 +1,9 @@
 import React from 'react'
 import './LocationSuggestion.css'
-const LocationSuggestion = ({suggestionName,suggestionCountry,setSelectedLocation,coordinates}) => {
+import { useSelectedLocationContext } from '../store/SelectedLocationContext';
+const LocationSuggestion = ({suggestionName,suggestionCountry,coordinates}) => {
+  const {setSelectedLocation} = useSelectedLocationContext();
+  
   const handleSelection = () => {
     if (!coordinates || coordinates.length < 2) {
       setSelectedLocation({

@@ -1,0 +1,8 @@
+.AirAndChartBox{
+    padding: 1rem 2rem 1rem;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    gap: 15px;
+    height: 50%;
+}

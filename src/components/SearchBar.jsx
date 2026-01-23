@@ -3,17 +3,17 @@ import "./SearchBar.css";
 import { useDarkModeContext } from "../store/DarkModeContext";
 import LocationSuggestion from "./LocationSuggestion";
 import { useWeatherContext } from "../store/WeatherContext";
+import { useSelectedLocationContext } from "../store/SelectedLocationContext";
 const SearchBar = () => {
   const { darkMode, setDarkMode } = useDarkModeContext();
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [selectedLocation,setSelectedLocation] = useState(null);
   const weatherApiURL = process.env.REACT_APP_WEATHER_API;
   const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
   const {state,dispatch} = useWeatherContext();
-  console.log("===========state",state);
+  const {selectedLocation} = useSelectedLocationContext();
   useEffect(() => {
     const fetchWeather = async () => {
       if (selectedLocation?.latitude && selectedLocation?.longitude) {
@@ -41,7 +41,6 @@ const SearchBar = () => {
 
           let response = await fetch(locationApi);
           let data = await response.json();
-          console.log("=====data", data);
           setSuggestions(data.features);
           setLoading(false);
         } catch (error) {
@@ -67,7 +66,7 @@ const SearchBar = () => {
         {suggestions &&
          !selectedLocation &&
           suggestions.map((el) => {
-            return <LocationSuggestion setSelectedLocation={setSelectedLocation} suggestionName={el?.properties?.name} coordinates={el?.geometry?.coordinates} suggestionCountry={el?.properties?.country} />;
+            return <LocationSuggestion suggestionName={el?.properties?.name} coordinates={el?.geometry?.coordinates} suggestionCountry={el?.properties?.country} />;
           })}
       </div>
       <div className="toggle-switch">

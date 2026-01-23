@@ -5,6 +5,7 @@ export const WeatherContext = createContext();
 
 let initialState = {
     weather:null,
+    airQuality:null,
 };
 export const WeatherContextProvider = ({children})=>{
     const [state,dispatch] = useReducer(WeatherReducer,initialState);

@@ -3,7 +3,6 @@ import { useWeatherContext } from "../store/WeatherContext";
 import "./WeatherBoxes.css";
 const WeatherBoxes = () => {
   const { state } = useWeatherContext();
-  console.log("=========state", state);
   return (
     <div className="weatherBox">
       <div className="firstBox">
@@ -35,16 +34,29 @@ const WeatherBoxes = () => {
 
       <div className="secondBox">
         <div className="box">
-          <h1>Hello world</h1>
+          <p>Visibility</p>
+          <h1>4 KM</h1>
         </div>
         <div className="box">
-          <h1>Hello world</h1>
+          <p>Humidity</p>
+          <h1>34%</h1>
+        </div>
+        <div className="side-flex box">
+          <div className="">
+            <p>Wind Speed</p>
+            <h1>
+              4<span id="unit">km/h</span>
+            </h1>
+          </div>
+
+          <div className="">
+            <p>Wind Direction</p>
+            <h1>East</h1>
+          </div>
         </div>
         <div className="box">
-          <h1>Hello world</h1>
-        </div>
-        <div className="box">
-          <h1>Hello world</h1>
+          <p>Cloudiness %</p>
+          <h1>25</h1>
         </div>
       </div>
 
