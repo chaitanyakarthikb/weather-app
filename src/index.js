@@ -5,13 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { DarkModeContextProvider } from './store/DarkModeContext';
 import { WeatherContextProvider } from './store/WeatherContext';
+import { SelectedLocationContext, SelectedLocationContextProvider } from './store/SelectedLocationContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <WeatherContextProvider>
-     <App />
+        <SelectedLocationContextProvider>
+          <App />
+        </SelectedLocationContextProvider>
      </WeatherContextProvider>
     </DarkModeContextProvider>
   </React.StrictMode>

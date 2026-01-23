@@ -5,6 +5,11 @@ export const WeatherReducer = (state,action)=>{
                 ...state,
                 weather:action.payload,
             }
+        case "SET_AIR_QUALITY":
+            return{
+                ...state,
+                airQuality:action.payload,
+            }
         default:
             return state;
     }

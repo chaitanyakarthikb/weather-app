@@ -1,0 +1,34 @@
+.airquality{
+    background-color: #2a2828;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+.components{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.components div{
+    text-align: center;
+}
+
+.airQualityMetric{
+    text-align: center;
+    padding-bottom: 7px;
+    padding-top: 1.5rem;
+}
+
+.airQualityMetric p{
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+#metric--heading{
+    font-size: 15px;
+    letter-spacing: 3.5px;
+    
+}

@@ -70,13 +70,50 @@
   background-color: #121b30 !important;
 }
 
-.secondBox .box{
-    background-color: #2a2828 !important;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+.secondBox .box {
+  background-color: #2a2828 !important;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+.d-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#unit {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-left: 3px;
+}
+
+
+
+.side-flex div p {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.side-flex {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.side-flex>div:nth-child(2) {
+  border-left: solid 1px white;
+  border-radius: 0% !important;
+}
+
+.side-flex div {
+  padding: 0 0.4rem 0;
+}
 /* ===============================================thirdbox========================= */
 .thirdBox {
   background-color: lightskyblue;
